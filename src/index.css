@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+  }
+
+  html {
+    background-color: #0A0A0A;
+  }
+
+  body {
+    @apply bg-[#0A0A0A] text-white font-sans antialiased;
+    min-height: 100dvh;
+    overscroll-behavior: none;
+  }
+
+  input, select, textarea {
+    @apply bg-transparent;
+  }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-surface rounded-2xl border border-surface-border p-4;
+  }
+
+  .btn-primary {
+    @apply bg-brand text-white font-semibold rounded-xl px-5 py-3 active:scale-95 transition-transform;
+  }
+
+  .btn-ghost {
+    @apply text-gray-400 font-medium rounded-xl px-4 py-2 active:scale-95 transition-transform hover:text-white;
+  }
+
+  .input-field {
+    @apply w-full bg-surface-raised border border-surface-border rounded-xl px-4 py-3 text-white placeholder-gray-600
+           focus:outline-none focus:border-brand/60 transition-colors text-sm;
+  }
+
+  .label {
+    @apply text-xs font-medium text-gray-400 uppercase tracking-wider mb-1.5 block;
+  }
+
+  .badge {
+    @apply text-xs font-semibold px-2.5 py-1 rounded-lg;
+  }
+
+  .bottom-nav-safe {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+}
+
+@layer utilities {
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  .text-brand {
+    color: #FF6B00;
+  }
+
+  .bg-brand {
+    background-color: #FF6B00;
+  }
+}
